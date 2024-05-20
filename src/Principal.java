@@ -1,4 +1,6 @@
 import com.ONE.Pelicula.calculadora.CalculadoraDeTiempo;
+import com.ONE.Pelicula.calculadora.FiltroSugerencia;
+import com.ONE.Peliculas.Episodio;
 import com.ONE.Peliculas.Pelicula;
 import com.ONE.Peliculas.Serie;
 
@@ -93,8 +95,24 @@ public class Principal {
         calculadora.incluye(serie);
         System.out.println("El tiempo total que requieres para ver el contenido que elegiste es de: "+ calculadora.getTiempoTotal() + "\n minutos");
 
+//**********SE CREA OBJETO DE CLASE FILTRO ********************** /
 
+        FiltroSugerencia filtroSugerencia= new FiltroSugerencia();
+        filtroSugerencia.filtra(filme); //filtra se encuentra en la clase FiltroSugerencia
+        filtroSugerencia.filtra(filmeDos);
+
+// **********SE CREA OBJETO DE CLASE EPISODIO********************** /
+
+        Episodio episodio=new Episodio();
+        episodio.setNombreSP("The Fallen");
+        episodio.setCapitulo(18);
+        episodio.setSerie(serieII);
+        episodio.setTotalViews(0);
+
+        filtroSugerencia.filtra(episodio);
 
     }
 
+    public static class PrincipalConBusqueda {
+    }
 }

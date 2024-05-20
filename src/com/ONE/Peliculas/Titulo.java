@@ -1,16 +1,23 @@
 package com.ONE.Peliculas;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo {
 
     // NO SE PUSO EL MAIN, DE PONERSE, NO PODRIA SER LLAMADO EN LA CLASE "Principal".
 
 
     /******************************* SE INICIALIZAN LOS ATRIBUTOS (VARIABLES) DE LOS METODOS *************************************/
+    @SerializedName("Title") //Se hizo esta anotacion para poder convertir la informacion de la Api OMDB, a las necesidades del codigo. En este caso se adapta el "Title" de la Api, al nombreSP de este codigo
     private  String nombreSP;
 
     //      int fechaLanzamiento; Asi estaban originalmente declaradas las variables.
+
+    @SerializedName("Year")
     private int fechaLanzamiento;
     //Se transformaron a publicas y privadas como ejercicio. En modo publico ya se puede acceder desde (PELICULA)
+
+    @SerializedName("Runtime")
     public int duracion;
     private double ponderacion;
     private int personas=0;
@@ -25,9 +32,11 @@ public class Titulo {
         this.nombreSP = nombrePelicula;
     }
 
+    public String getNombreSP() {
+        return nombreSP;
+    }
 
-
-    /******************** METODO PARA DEVOLVER PERSONAS ********************/
+    /******************** GETTER PARA DEVOLVER PERSONAS ********************/
 
    /* Al haberse convertido en una instancia privada, el usuario no podra acceder directamente al metodo "PERSONAS", por lo que unicamente devolvera el resultado por medio del nuevo metodo creado.
 
@@ -72,16 +81,19 @@ public class Titulo {
     public double promedio(){
         return ponderacion/personas;
     }
+
+
+
+// SE CREA UN TO STRING, PARA QUE SE PUEDA SOBREESCRIBIR (REEMPLAZAR) LA INFORMACION DE LA API con este CODIGO (alt+ insert)
+    @Override
+    public String toString() {
+        return //"Titulo{" +
+                "nombreSP='" + nombreSP + '\'' +
+                ", fechaLanzamiento=" + fechaLanzamiento +
+                ", duracion=" + duracion /*+*/
+                /*'}'*/;
+    }
 }
-
-
-
-
-
-
-
-
-
 
 //    /** SE HARA UNA SUMA CON LOS VALORES INTERNOS: */
 //

@@ -1,6 +1,8 @@
 package com.ONE.Peliculas;
 
-public class Serie extends Titulo{
+import com.ONE.Pelicula.calculadora.Estrellas;
+
+public class Serie extends Titulo implements Estrellas {
     int temporadas;
     int episodioTemp;
 
@@ -24,5 +26,10 @@ public class Serie extends Titulo{
     @Override
     public int getDuracion() {
         return minEpisodio*temporadas * episodioTemp ;
+    }
+
+    @Override
+    public int getEstrellas() {
+        return 0;
     }
 }

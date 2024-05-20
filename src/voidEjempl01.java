@@ -12,7 +12,7 @@ public class voidEjempl01 {
       }
 }
 
-/*READ: Para que acepte sumar argumentos, es decir, interactuar mas alla del resultado que entrega este metodo al ser llamado en la clase (voidPrincipal02), es necesario cambiar el el "void" por el tipo que se espera recibir en la clase que lo invoca.
+/*READ: Para que acepte sumar argumentos, es decir, interactuar mas alla del resultado que entrega este metodo al ser llamado en la clase (voidPrincipal02), es necesario cambiar el  "void" por el tipo que se espera recibir en la clase que lo invoca.
 
 Se eliminara el println() y se pondra: return nombreMetodo.
 
